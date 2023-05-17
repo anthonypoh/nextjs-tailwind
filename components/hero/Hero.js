@@ -1,23 +1,25 @@
 "use client"
 import { useState } from 'react'
+import Image from 'next/image'
+import { Tooltip, Spacer, Grid } from '@geist-ui/core'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-	{ name: 'Product', href: '#' },
-	{ name: 'Features', href: '#' },
-	{ name: 'Marketplace', href: '#' },
-	{ name: 'Company', href: '#' },
+	{ name: 'Home', href: '#' },
+	{ name: 'About', href: '#' },
+	{ name: 'Projects', href: '#' },
+	{ name: 'Contact', href: '#' },
 ]
 
 export default function Hero() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
 	return (
-		<div className="bg-white min-h-screen">
+		<div className="bg-white min-h-screen max-h-screen">
 			<header className="absolute inset-x-0 top-0 z-50">
 				<nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-					<div className="flex lg:flex-1">
+					{/* <div className="flex lg:flex-1">
 						<a href="#" className="-m-1.5 p-1.5">
 							<span className="sr-only">Your Company</span>
 							<img
@@ -26,7 +28,7 @@ export default function Hero() {
 								alt=""
 							/>
 						</a>
-					</div>
+					</div> */}
 					<div className="flex lg:hidden">
 						<button
 							type="button"
@@ -37,7 +39,7 @@ export default function Hero() {
 							<Bars3Icon className="h-6 w-6" aria-hidden="true" />
 						</button>
 					</div>
-					<div className="hidden lg:flex lg:gap-x-12">
+					<div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-12">
 						{navigation.map((item) => (
 							<a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
 								{item.name}
@@ -112,8 +114,8 @@ export default function Hero() {
 					/>
 				</div>
 				{/* fix padding for page */}
-				<div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56"> 
-					<div className="hidden sm:mb-8 sm:flex sm:justify-center">
+				<div className="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
+					{/* <div className="hidden sm:mb-8 sm:flex sm:justify-center">
 						<div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
 							Announcing our next round of funding.{' '}
 							<a href="#" className="font-semibold text-indigo-600">
@@ -121,16 +123,82 @@ export default function Hero() {
 								Read more <span aria-hidden="true">&rarr;</span>
 							</a>
 						</div>
-					</div>
+					</div> */}
 					<div className="text-center">
 						<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-							Data to enrich your online business
+							Full Stack React Developer
 						</h1>
 						<p className="mt-6 text-lg leading-8 text-gray-600">
-							Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-							fugiat veniam occaecat fugiat aliqua.
+							Hi, I'm Anthony Poh. I work on full-stack applications at work and this is my passion.
 						</p>
-						<div className="mt-10 flex items-center justify-center gap-x-6">
+						<div className="hidden sm:flex sm:justify-center mt-24">
+							<Tooltip text="ReactJS" type="secondary" offset={4} leaveDelay={0}>
+								<Image
+									src="/reactjs.svg"
+									alt="ReactJS Logo"
+									width={111}
+									height={100}
+									priority
+									className='hover:scale-125'
+								/>
+							</Tooltip>
+							<Tooltip text="NextJS" type="secondary" offset={4} leaveDelay={0}>
+								<Image
+									src="/nextjs.svg"
+									alt="NextJS Logo"
+									width={111}
+									height={110}
+									priority
+									className='hover:scale-125'
+								/>
+							</Tooltip>
+							<Tooltip text="Tailwind CSS" type="secondary" offset={4} leaveDelay={0}>
+								<Image
+									src="/tailwind.svg"
+									alt="Tailwind Logo"
+									width={111}
+									height={110}
+									priority
+									className='hover:scale-125'
+								/>
+							</Tooltip>
+							<Tooltip text="HTML" type="secondary" offset={4} leaveDelay={0}>
+								<Image
+									src="/html5.svg"
+									alt="HTML5 Logo"
+									width={111}
+									height={110}
+									priority
+									className='hover:scale-125'
+								/>
+							</Tooltip>
+							<Tooltip text="CSS" type="secondary" offset={4} leaveDelay={0}>
+								<Image
+									src="/css3.svg"
+									alt="CSS3 Logo"
+									width={111}
+									height={110}
+									priority
+									className='hover:scale-125'
+								/>
+							</Tooltip>
+							<Tooltip text="Linux" type="secondary" offset={4} leaveDelay={0}>
+								<Image
+									src="linux.svg"
+									alt="Linux Logo"
+									width={111}
+									height={110}
+									priority
+									className='hover:scale-125'
+								/>
+							</Tooltip>
+						</div>
+						{/* <Grid.Container>
+							<Grid xs={24} style={{ background: '#444', borderRadius: '15px' }}>
+								<Spacer h={0.1} />
+							</Grid>
+						</Grid.Container> */}
+						{/* <div className="mt-10 flex items-center justify-center gap-x-6">
 							<a
 								href="#"
 								className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -140,7 +208,7 @@ export default function Hero() {
 							<a href="#" className="text-sm font-semibold leading-6 text-gray-900">
 								Learn more <span aria-hidden="true">→</span>
 							</a>
-						</div>
+						</div> */}
 					</div>
 				</div>
 				{/* <div
