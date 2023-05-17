@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Hero from '@/components/hero/Hero'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <div className="min-h-screen">
+      <Hero />
       {/* <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -26,7 +28,7 @@ export default function Home() {
             />
           </a>
         </div>
-      </div> */}
+      </div>
 
       <div className={styles.center}>
         <Image
@@ -89,7 +91,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
-    </main>
+      </div> */}
+    </div >
   )
 }
