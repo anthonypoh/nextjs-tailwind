@@ -1,11 +1,15 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Navbar from '@/components/navbar/Navbar'
 import Hero from '@/components/hero/Hero'
+import Projects from '@/components/projects/Projects'
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <Navbar />
       <Hero />
+      <Projects />
       {/* <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
